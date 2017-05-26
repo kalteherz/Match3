@@ -5,12 +5,13 @@
 using System;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 
 namespace Match3
 {
 	public abstract class Elem {
 		
-		static Type[] typeList = System.Reflection.Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType.Name == "Elem").ToArray();
+		static Type[] typeList = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType.Name == "Elem").ToArray();
 		
 		static Random rnd = new Random();
 
